@@ -1,0 +1,48 @@
+2026-09-12 04:54:44.697 [info] semantic_tokens_full file:///voc/work/Exercises/cd14763%20C2%20Executing%20Code%20with%20AgentCore%20Code%20Interpreter/Demo/demo.py 
+2026-09-12 04:54:45.157 [info] [Debug - 4:54:45 AM] no definitions found for name "module bedrock_agentcore" of type 'module' (10:5)
+2026-09-12 04:54:45.157 [info] [Debug - 4:54:45 AM] no definitions found for name "module runtime" of type 'module' (10:23)
+2026-09-12 04:54:45.158 [info] [Debug - 4:54:45 AM] no definitions found for name "module BedrockAgentCoreApp" of type 'module' (10:38)
+2026-09-12 04:54:45.158 [info] [Debug - 4:54:45 AM] no definitions found for name "module bedrock_agentcore" of type 'module' (11:5)
+2026-09-12 04:54:45.158 [info] [Debug - 4:54:45 AM] no definitions found for name "module tools" of type 'module' (11:23)
+2026-09-12 04:54:45.158 [info] [Debug - 4:54:45 AM] no definitions found for name "module code_interpreter_client" of type 'module' (11:29)
+2026-09-12 04:54:45.158 [info] [Debug - 4:54:45 AM] no definitions found for name "module code_session" of type 'module' (11:60)
+2026-09-12 04:54:45.159 [info] [Debug - 4:54:45 AM] no definitions found for name "module strands" of type 'module' (12:5)
+2026-09-12 04:54:45.159 [info] [Debug - 4:54:45 AM] no definitions found for name "module Agent" of type 'module' (12:20)
+2026-09-12 04:54:45.159 [info] [Debug - 4:54:45 AM] no definitions found for name "module tool" of type 'module' (12:27)
+2026-09-12 04:54:45.159 [info] [Debug - 4:54:45 AM] no definitions found for name "module strands" of type 'module' (13:5)
+2026-09-12 04:54:45.159 [info] [Debug - 4:54:45 AM] no definitions found for name "module models" of type 'module' (13:13)
+2026-09-12 04:54:45.159 [info] [Debug - 4:54:45 AM] no definitions found for name "module BedrockModel" of type 'module' (13:27)
+2026-09-12 04:54:45.229 [info] semantic_tokens_range file:///voc/work/Exercises/cd14763%20C2%20Executing%20Code%20with%20AgentCore%20Code%20Interpreter/Demo/demo.py 0:0-90:0
+2026-09-12 04:54:45.265 [info] [Debug - 4:54:45 AM] no definitions found for name "module bedrock_agentcore" of type 'module' (10:5)
+2026-09-12 04:54:45.265 [info] [Debug - 4:54:45 AM] no definitions found for name "module runtime" of type 'module' (10:23)
+2026-09-12 04:54:45.265 [info] [Debug - 4:54:45 AM] no definitions found for name "module BedrockAgentCoreApp" of type 'module' (10:38)
+2026-09-12 04:54:45.265 [info] [Debug - 4:54:45 AM] no definitions found for name "module bedrock_agentcore" of type 'module' (11:5)
+2026-09-12 04:54:45.265 [info] [Debug - 4:54:45 AM] no definitions found for name "module tools" of type 'module' (11:23)
+2026-09-12 04:54:45.265 [info] [Debug - 4:54:45 AM] no definitions found for name "module code_interpreter_client" of type 'module' (11:29)
+2026-09-12 04:54:45.265 [info] [Debug - 4:54:45 AM] no definitions found for name "module code_session" of type 'module' (11:60)
+2026-09-12 04:54:45.266 [info] [Debug - 4:54:45 AM] no definitions found for name "module strands" of type 'module' (12:5)
+2026-09-12 04:54:45.266 [info] [Debug - 4:54:45 AM] no definitions found for name "module Agent" of type 'module' (12:20)
+2026-09-12 04:54:45.266 [info] [Debug - 4:54:45 AM] no definitions found for name "module tool" of type 'module' (12:27)
+2026-09-12 04:54:45.266 [info] [Debug - 4:54:45 AM] no definitions found for name "module strands" of type 'module' (13:5)
+2026-09-12 04:54:45.267 [info] [Debug - 4:54:45 AM] no definitions found for name "module models" of type 'module' (13:13)
+2026-09-12 04:54:45.268 [info] [Debug - 4:54:45 AM] no definitions found for name "module BedrockModel" of type 'module' (13:27)
+2026-09-12 04:54:45.307 [info] [Debug - 4:54:45 AM] no definitions found for name "BedrockAgentCoreApp" of type 'statement' (18:6)
+2026-09-12 04:54:45.307 [info] [Debug - 4:54:45 AM] no definitions found for name "BedrockModel" of type 'statement' (19:8)
+2026-09-12 04:54:45.307 [info] [Debug - 4:54:45 AM] no definitions found for name "model_id" of type 'statement' (19:21)
+2026-09-12 04:54:45.307 [info] [Debug - 4:54:45 AM] no definitions found for name "tool" of type 'statement' (28:1)
+2026-09-12 04:54:45.318 [info] [Debug - 4:54:45 AM] multiple definitions found for name "code" of type 'statement' (36:32):
+ <Name full_name='Exercises.cd14763 C2 Executing Code with AgentCore Code Interpreter.Demo.demo.execute_python.code', description='code = f"# {description}\\n{code}"'>
+<Name name='code', description='param code: str'>
+2026-09-12 04:54:45.318 [info] [Debug - 4:54:45 AM] no definitions found for name "code_session" of type 'statement' (38:9)
+2026-09-12 04:54:45.319 [info] [Debug - 4:54:45 AM] no definitions found for name "invoke" of type 'statement' (39:31)
+2026-09-12 04:54:45.319 [info] [Debug - 4:54:45 AM] multiple definitions found for name "code" of type 'statement' (40:20):
+ <Name full_name='Exercises.cd14763 C2 Executing Code with AgentCore Code Interpreter.Demo.demo.execute_python.code', description='code = f"# {description}\\n{code}"'>
+<Name name='code', description='param code: str'>
+2026-09-12 04:54:45.320 [info] [Debug - 4:54:45 AM] no definitions found for name "entrypoint" of type 'statement' (72:5)
+2026-09-12 04:54:45.322 [info] ERROR:pygls.protocol.json_rpc:Exception occurred for message "5": _pickle.UnpicklingError: could not find MARK
+NoneType: None
+
+2026-09-12 04:54:45.323 [info] [Error - 4:54:45 AM] Request textDocument/semanticTokens/range failed.
+2026-09-12 04:54:45.323 [info]   Message: _pickle.UnpicklingError: could not find MARK
+  Code: -32603 
+[object Object]

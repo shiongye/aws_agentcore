@@ -1,0 +1,38 @@
+[2026-09-12T04:50:58.404Z] info  code-server 4.103.2 54b33a75e0b4593b77f9a217323c4b27a42f4073
+[2026-09-12T04:50:58.405Z] info  Using user-data-dir /voc/work/.local/share/code-server
+[2026-09-12T04:50:58.421Z] info  Using config file /voc/work/.config/code-server/config.yaml
+[2026-09-12T04:50:58.422Z] info  HTTP server listening on http://0.0.0.0:8081/
+[2026-09-12T04:50:58.422Z] info    - Authentication is disabled
+[2026-09-12T04:50:58.422Z] info    - Not serving HTTPS
+[2026-09-12T04:50:58.422Z] info  Session server listening on /voc/work/.local/share/code-server/code-server-ipc.sock
+[04:50:58] 
+
+
+
+
+[04:50:58] Extension host agent started.
+[04:50:58] Started initializing default profile extensions in extensions installation folder. file:///voc/work/.local/share/code-server/extensions
+[04:50:58] Completed initializing default profile extensions in extensions installation folder. file:///voc/work/.local/share/code-server/extensions
+[04:51:04] [172.16.11.129][5b6cf114][ManagementConnection] New connection established.
+[04:51:09] [172.16.11.129][cf5ae97f][ExtensionHostConnection] New connection established.
+[04:51:09] [172.16.11.129][cf5ae97f][ExtensionHostConnection] <94> Launched Extension Host Process.
+[05:06:42] [172.16.11.129][5b6cf114][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[05:06:44] [172.16.11.129][cf5ae97f][ExtensionHostConnection] <94> Extension Host Process exited with code: 0, signal: null.
+[05:06:52] [172.16.11.129][cc797fdb][ManagementConnection] New connection established.
+[05:06:57] [172.16.11.129][68a604f4][ExtensionHostConnection] New connection established.
+[05:06:57] [172.16.11.129][68a604f4][ExtensionHostConnection] <3910> Launched Extension Host Process.
+[05:12:21] [172.16.11.129][5fc01b3f][ManagementConnection] New connection established.
+[05:12:26] [172.16.11.129][bdccc63e][ExtensionHostConnection] New connection established.
+[05:12:26] [172.16.11.129][bdccc63e][ExtensionHostConnection] <5144> Launched Extension Host Process.
+[05:12:40] [172.16.11.129][5fc01b3f][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[05:12:40] [172.16.11.129][bdccc63e][ExtensionHostConnection] <5144> Extension Host Process exited with code: 0, signal: null.
+[05:12:41] [172.16.11.129][cc797fdb][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[05:12:42] [172.16.11.129][43300d55][ManagementConnection] New connection established.
+[05:12:43] [172.16.11.129][68a604f4][ExtensionHostConnection] <3910> Extension Host Process exited with code: 0, signal: null.
+[05:12:46] [172.16.11.129][90076a84][ExtensionHostConnection] New connection established.
+[05:12:46] [172.16.11.129][90076a84][ExtensionHostConnection] <5271> Launched Extension Host Process.
+[05:15:08] [172.16.11.129][43300d55][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[05:15:08] [172.16.11.129][90076a84][ExtensionHostConnection] <5271> Extension Host Process exited with code: 0, signal: null.
+[05:15:11] [172.16.11.129][2f5f7f82][ManagementConnection] New connection established.
+[05:15:15] [172.16.11.129][360a15a3][ExtensionHostConnection] New connection established.
+[05:15:15] [172.16.11.129][360a15a3][ExtensionHostConnection] <5982> Launched Extension Host Process.
