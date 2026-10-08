@@ -21,8 +21,9 @@ from pathlib import Path
 
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 # TODO (Step 1): Import `tool` from strands (alongside Agent)
-from strands import Agent
+from strands import Agent, tool
 from strands.models import BedrockModel
+from strands_tools import current_time
 # TODO (Step 1): Import `current_time` from strands_tools
 
 # ---------------------------------------------------------------------------
@@ -87,10 +88,23 @@ SYD = Sydney | NRT = Tokyo Narita | DXB = Dubai | CUN = Cancun"""
 # ===========================================================================
 
 # TODO (Step 2): Add the @tool decorator
+@tool
 def search_flights(origin: str, destination: str, date: str) -> str:
     
+    # TODO (Step 2): Add a docstring describing when to use this tool, the expected parameters, and the return format
     """
-    TODO (Step 2): Add a docstring describing when to use this tool, the expected parameters, and the return format
+    Search for available Horizon Travel flights between two airports on a given date.
+
+    Use this tool whenever a customer asks about flight availability,
+    departure times, prices, or seat availability between two cities.
+
+    Args:
+        origin      : IATA airport code for the departure airport (e.g. 'LHR', 'JFK', 'BCN')
+        destination : IATA airport code for the arrival airport (e.g. 'CDG', 'MIA', 'FCO')
+        date        : Travel date in YYYY-MM-DD format (e.g. '2026-03-15')
+
+    Returns:
+        A formatted summary of matching flights, or a message if none found.
     """
     
     logger.info("search_flights called: %s → %s on %s", origin, destination, date)
@@ -154,10 +168,22 @@ def search_flights(origin: str, destination: str, date: str) -> str:
 # ===========================================================================
 
 # TODO (Step 3): Add the @tool decorator
+@tool
 def search_hotels(city: str, max_price_usd: float = 9999.0) -> str:
     
+    # TODO (Step 3): Add a docstring describing when to use this tool, the expected parameters, and the return format
     """
-    TODO (Step 3): Add a docstring describing when to use this tool, the expected parameters, and the return format
+    Search for available hotels in a city, with an optional maximum nightly price.
+
+    Use this tool when a customer asks about accommodation options,
+    hotel prices, amenities, room types, or check-in/check-out policies.
+
+    Args:
+        city          : Destination city name (e.g. 'Barcelona', 'Tokyo', 'Dubai', 'Rome')
+        max_price_usd : Optional maximum price per night in USD. Defaults to no limit (999).
+
+    Returns:
+        A formatted list of matching hotels with prices, ratings, and amenities.
     """
     
     logger.info("search_hotels called: city=%s, max=$%.0f", city, max_price_usd)
@@ -215,10 +241,25 @@ def search_hotels(city: str, max_price_usd: float = 9999.0) -> str:
 # ===========================================================================
 
 # TODO (Step 4): Add the @tool decorator
+@tool
 def get_exchange_rate(from_currency: str, to_currency: str, amount: float = 1.0) -> str:
     
     """
     TODO (Step 4): Add a docstring describing when to use this tool, the expected parameters, and the return format
+    Do conversion of currency based on the original currency and target currency, for the amount provided.
+
+    Use this tool when customer asks about currency exchange.
+
+    Supported currencies: USD, EUR, GBP, JPY, AUD, CAD, CHF, SGD, HKD, NZD,
+                          SEK, NOK, DKK, AED, THB, MXN
+
+    Args:
+        from_currency   : ISO 4217 source currency code (e.g. 'USD', 'EUR', 'GBP')
+        to_currency     : ISO 4217 target currency code (e.g. 'JPY', 'AED', 'AUD')
+        amount          : Amount to convert (default: 1.0 for a rate-only query)
+
+    Returns:
+        Exchange rate and converted amount as formatted string.
     """
 
     logger.info(
@@ -293,8 +334,20 @@ async def invoke(payload, context=None):
     logger.info("User: %s", user_message[:100])
 
     # TODO (Step 5): Create an Agent with all four tools:
+    agent = Agent(
+        model=model,
+        system_prompt=SYSTEM_PROMPT,
+        tools=[
+            current_time,       # ← built-in: no implementation needed
+            search_flights,     # ← custom: reads flights.json
+            search_hotels,      # ← custom: reads hotels.json
+            get_exchange_rate   # ← custom: reads exchange_rates.json
+        ],
+    )
 
     # TODO (Step 5): Invoke the agent and return the response dict
+    response = agent(user_message)
+    return response
     pass
 
 

@@ -1,3 +1,12 @@
+# agentcore configure workaround
+printf '\nagentcore() { python3 -c "from bedrock_agentcore_starter_toolkit.cli.cli import main; main()" "$@"; }\n' >> ~/.bashrc
+
+source ~/.bashrc
+
+type agentcore
+
+- expecting: agentcore is a function
+
 # Project: Building a Production-Grade Customer Support AI Agent with Amazon Bedrock AgentCore
 
 **Udacity — AWS AI Engineering Nanodegree — Course 2**

@@ -4,7 +4,7 @@
     "files.exclude": {
         "**/.*": true
     },
-    "workbench.colorTheme": "Default Light Modern",
+    "workbench.colorTheme": "Default Dark+",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.smoothScrolling": true,
     "workbench.startupEditor": "none",
@@ -37,5 +37,83 @@
         "/bin/python",
         "/bin/python3.8",
         "/usr/bin/python3.8"
-    ]
+    ],
+    "rust-analyzer.checkOnSave": false,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "function": {
+                "foreground": "#4B8CDC"
+            },
+            "method": {
+                "foreground": "#4B8CDC"
+            },
+            "unresolvedReference": {
+                "foreground": "#ff6edb",
+                "fontStyle": "strikethrough"
+            },
+            "*.deprecated": {
+                "fontStyle": "strikethrough"
+            },
+            "namespace": {
+                "foreground": "#7b939d"
+            },
+            "method.static": "#4B8CDC",
+            "function.static": "#4B8CDC",
+            "macro": "#4B8CDC",
+            "struct": "#DDE86E",
+            "enum": "#FCB141",
+            "enumMember": {
+                "foreground": "#FFCE66"
+            },
+            "*.reference": {
+                "fontStyle": "italic"
+            },
+            "*.mutable": {
+                "fontStyle": "bold"
+            },
+            "variable.mutable": {
+                "fontStyle": "bold italic"
+            },
+            "property": "#ad83da",
+            "variable": "#E192EF",
+            "parameter": "#7c86f4",
+            "selfTypeKeyword": "#ce55b7",
+            "selfKeyword": "#ce55b7",
+            "lifetime": "#c56db599",
+            "attributeBracket": "#2469ae",
+            "angle": "#2469ae",
+            "escapeSequence": "#2d78c2",
+            "formatSpecifier": "#2d78c2",
+            "typeAlias": "#ecc68e",
+            "operator": {
+                "fontStyle": "bold",
+                "foreground": "#4d6a9f"
+            },
+            "operator.unsafe": "#e02b9d",
+            "function.unsafe": "#e02b9d",
+            "method.unsafe": "#e02b9d",
+            "keyword": {
+                "foreground": "#a8709e",
+                "fontStyle": "italic bold"
+            },
+            "*.controlFlow": {
+                "fontStyle": "bold",
+                "foreground": "#d14178"
+            },
+            "*.static": {
+                "fontStyle": "bold",
+                "foreground": "#6665c7"
+            },
+            "constParameter": {
+                "fontStyle": "bold",
+                "foreground": "#6665c7"
+            },
+            "*.constant": {
+                "fontStyle": "bold",
+                "foreground": "#c465c7"
+            },
+            "*.trait": "#d1de73"
+        }
+    }
 }

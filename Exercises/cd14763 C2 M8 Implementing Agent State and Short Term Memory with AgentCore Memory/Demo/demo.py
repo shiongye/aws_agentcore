@@ -36,7 +36,7 @@ MODEL_ID = "us.amazon.nova-2-lite-v1:0"
 model = BedrockModel(model_id=MODEL_ID)
 
 REGION = "us-east-1"
-MEMORY_ID = "REPLACE_WITH_YOUR_MEMORY_ID"
+MEMORY_ID = "WanderBot-YK68Y3AjTD"
 
 SYSTEM_PROMPT = """You are WanderBot, the AI travel assistant for Horizon Travel.
 

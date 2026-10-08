@@ -31,7 +31,6 @@ from strands.models import BedrockModel
 
 # TODO Step 1: Import code_session
 from bedrock_agentcore.tools.code_interpreter_client import code_session
-from strands_tools import calculator
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("WanderBot.CodeInterpreter")
@@ -40,32 +39,32 @@ app = BedrockAgentCoreApp()
 model = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
 # TODO Step 2: Set the REGION constant
-# REGION = "us-east-1"
+REGION = "us-east-1"
 
 
 # ===========================================================================
 # TODO Step 3: Implement the calculate_trip_cost tool
 # ===========================================================================
 
-# @tool
-# def calculate_trip_cost(code: str, description: str = "") -> str:
-#     """Execute Python code in an isolated AgentCore sandbox and return the output."""
+@tool
+def calculate_trip_cost(code: str, description: str = "") -> str:
+    """Execute Python code in an isolated AgentCore sandbox and return the output."""
 
-#     if description:
-#         code = f"# {description}\n{code}"
+    if description:
+        code = f"# {description}\n{code}"
 
-#     # Print the LLM-generated code so you can see what the agent wrote
-#     print(f"\nGenerated Code:\n{code}\n")
+    # Print the LLM-generated code so you can see what the agent wrote
+    print(f"\nGenerated Code:\n{code}\n")
 
-#     with code_session(REGION) as code_client:
-#         response = code_client.invoke("executeCode", {
-#             "code": code,
-#             "language": "python",
-#             "clearContext": True,   # fresh sandbox every call — no state leaks
-#         })
+    with code_session(REGION) as code_client:
+        response = code_client.invoke("executeCode", {
+            "code": code,
+            "language": "python",
+            "clearContext": True,   # fresh sandbox every call — no state leaks
+        })
 
-#     for event in response["stream"]:
-#         return json.dumps(event["result"])
+    for event in response["stream"]:
+        return json.dumps(event["result"])
 
 
 SYSTEM_PROMPT = """You are WanderBot, the AI travel assistant for Horizon Travel.

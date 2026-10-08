@@ -34,10 +34,16 @@ from strands import Agent
 from strands.models import BedrockModel
 
 # TODO Step 2: Import MemoryClient and the hook classes
+from bedrock_agentcore.memory import MemoryClient
 
 # TODO Step 2: Import AfterInvocationEvent, HookProvider, HookRegistry, 
 #               MessageAddedEvent, from strands.hooks
-
+from strands.hooks import (
+    AfterInvocationEvent, 
+    HookProvider, 
+    HookRegistry, 
+    MessageAddedEvent
+)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("WanderBot.LongTermMemory")
@@ -46,7 +52,7 @@ app = BedrockAgentCoreApp()
 model = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
 # TODO Step 2: Paste the Memory ID from Step 1
-MEMORY_ID = "PASTE_YOUR_MEMORY_ID_HERE"
+MEMORY_ID = "WanderBot-YK68Y3AjTD"
 REGION    = "us-east-1"
 memory_client = MemoryClient(region_name=REGION)
 
@@ -90,7 +96,8 @@ class WanderBotMemoryHook(HookProvider):
     #               _retrieve_travel_context for MessageAddedEvent
     #               _save_interaction for AfterInvocationEvent
     def register_hooks(self, registry: HookRegistry) -> None:
-        pass
+        registry.add_callback(MessageAddedEvent, self._retrieve_travel_context)
+        registry.add_callback(AfterInvocationEvent, self._save_interaction)
 
     def _retrieve_travel_context(self, event) -> None:
         """Search each memory namespace and prepend results to the user's message."""
@@ -204,7 +211,15 @@ async def invoke(payload: dict, context=None) -> dict:
 
     # TODO Step 4: Build the hook with memory_client and memory_id 
     #               and wire it into the agent - include agent state with session_id and actor_id
-
+    agent=Agent(
+        model=model,
+        system_prompt=SYSTEM_PROMPT,
+        tools=[],
+        state={"session_id": session_id, "actor_id": actor_id},
+        hooks=[memory_hook],
+    )
+    response=agent(user_message)
+    return response
 
 
 # ---------------------------------------------------------------------------

@@ -6,7 +6,7 @@ The following ``update-project`` example changes the settings of the specified C
         --description "This project is updated" \
         --source "{\"type\": \"S3\",\"location\": \"codebuild-us-west-2-123456789012-input-bucket/my-source-2.zip\"}" \
         --artifacts {"\"type\": \"S3\",\"location\": \"codebuild-us-west-2-123456789012-output-bucket-2\""} \
-        --environment "{\"type\": \"LINUX_CONTAINER\",\"image\": \"aws/codebuild/standard:1.0\",\"computeType\": \"BUILD_GENERAL1_MEDIUM\"}" \
+        --environment "{\"type\": \"LINUX_CONTAINER\",\"image\": \"aws/codebuild/standard:1.0\",\"computeType\": \"BUILD_GENERAL1_SMALL\"}" \
         --service-role "arn:aws:iam::123456789012:role/service-role/my-codebuild-service-role"
 
 The output displays the updated settings. ::
@@ -19,7 +19,7 @@ The output displays the updated settings. ::
                 "environmentVariables": [],
                 "type": "LINUX_CONTAINER",
                 "image": "aws/codebuild/standard:1.0",
-                "computeType": "BUILD_GENERAL1_MEDIUM",
+                "computeType": "BUILD_GENERAL1_SMALL",
                 "imagePullCredentialsType": "CODEBUILD"
             },
             "queuedTimeoutInMinutes": 480,

@@ -24,7 +24,7 @@ logger = logging.getLogger("WanderBot.LongTermMemory")
 app = BedrockAgentCoreApp()
 model = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
-MEMORY_ID = "PASTE_YOUR_MEMORY_ID_HERE"
+MEMORY_ID = "WanderBot-YK68Y3AjTD"
 REGION    = "us-east-1"
 
 memory_client = MemoryClient(region_name=REGION)

@@ -1,0 +1,126 @@
+default_agent: WanderBot
+agents:
+  WanderBot:
+    name: WanderBot
+    language: python
+    node_version: '20'
+    entrypoint: /voc/work/Exercises/cd14763 C2 M8 Implementing Agent State and Short
+      Term Memory with AgentCore Memory/Exercise/starter.py
+    deployment_type: direct_code_deploy
+    runtime_type: PYTHON_3_10
+    platform: linux/arm64
+    container_runtime: null
+    source_path: /voc/work/Exercises/cd14763 C2 M8 Implementing Agent State and Short
+      Term Memory with AgentCore Memory/Exercise
+    aws:
+      execution_role: arn:aws:iam::102959685868:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-a25b0cb827
+      execution_role_auto_create: false
+      account: '102959685868'
+      region: us-east-1
+      ecr_repository: null
+      ecr_auto_create: false
+      s3_path: s3://bedrock-agentcore-codebuild-sources-102959685868-us-east-1/WanderBot/
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: WanderBot-RwdOTw2AS5
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:102959685868:runtime/WanderBot-RwdOTw2AS5
+      agent_session_id: c2f704ea-4d01-4716-8414-ebc82f76bd2d
+    codebuild:
+      project_name: null
+      execution_role: null
+      source_bucket: null
+    memory:
+      mode: STM_AND_LTM
+      memory_id: WanderBot-YK68Y3AjTD
+      memory_arn: null
+      memory_name: WanderBot_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
+  WanderBot_docker:
+    name: WanderBot_docker
+    language: python
+    node_version: '20'
+    entrypoint: /voc/work/Exercises/cd14763 C2 M8 Implementing Agent State and Short
+      Term Memory with AgentCore Memory/Exercise/starter.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: none
+    source_path: /voc/work/Exercises/cd14763 C2 M8 Implementing Agent State and Short
+      Term Memory with AgentCore Memory/Exercise
+    aws:
+      execution_role: arn:aws:iam::102959685868:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-f43631876c
+      execution_role_auto_create: false
+      account: '102959685868'
+      region: us-east-1
+      ecr_repository: 102959685868.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-wanderbot_docker
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: null
+      agent_arn: null
+      agent_session_id: null
+    codebuild:
+      project_name: null
+      execution_role: null
+      source_bucket: null
+    memory:
+      mode: STM_AND_LTM
+      memory_id: WanderBot-YK68Y3AjTD
+      memory_arn: null
+      memory_name: WanderBot_docker_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false

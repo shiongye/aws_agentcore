@@ -1,0 +1,11 @@
+**.log
+**.cache/*
+**/caches/
+**/.claude/
+.local*
+.npm/
+**/.aws/
+**/.venv/
+**.pyc
+**.hash
+**.zip

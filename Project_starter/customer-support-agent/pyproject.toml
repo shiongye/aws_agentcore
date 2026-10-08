@@ -1,0 +1,22 @@
+[project]
+name = "customer-support-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "student", email = "0" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "bedrock-agentcore>=1.24.0",
+    "bedrock-agentcore-starter-toolkit>=0.3.13",
+    "strands-agents>=1.57.1",
+    "strands-agents-tools>=0.8.9",
+]
+
+[project.scripts]
+customer-support-agent = "customer_support_agent:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"

@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "WanderBotKnowledgeBaseRetrieval",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:Retrieve"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:us-east-1:102959685868:knowledge-base/K8YJQZM6CE"
+      ]
+    }
+  ]
+}

@@ -17,7 +17,7 @@ logger = logging.getLogger("WanderBot.AgentCoreRAG")
 app = BedrockAgentCoreApp()
 model = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
-KB_ID  = "wanderbot-kb-2024-06"  # Replace with your actual knowledge base ID
+KB_ID  = "K8YJQZM6CE"  # Replace with your actual knowledge base ID
 REGION = "us-east-1"
 
 _bedrock_runtime = boto3.client("bedrock-agent-runtime", region_name=REGION)

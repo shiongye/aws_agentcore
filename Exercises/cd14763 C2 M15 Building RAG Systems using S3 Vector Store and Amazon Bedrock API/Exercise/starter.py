@@ -38,7 +38,7 @@ app = BedrockAgentCoreApp()
 model = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
 # TODO Step 3: Paste the KB ID from Step 2
-KB_ID  = "PASTE_YOUR_KB_ID_HERE"
+KB_ID  = "K8YJQZM6CE"
 REGION = "us-east-1"
 _bedrock_runtime = boto3.client("bedrock-agent-runtime", region_name=REGION)
 
@@ -89,6 +89,14 @@ async def invoke(payload: dict, context=None) -> dict:
     logger.info("User: %s", user_message[:80])
 
     # TODO Step 4: Create the agent with search_knowledge_base as a tool and invoke
+    agent=Agent(
+        model=model,
+        system_prompt=SYSTEM_PROMPT,
+        tools=[search_knowledge_base]
+    )
+
+    response = agent(user_message)
+    return response
  
 
 

@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GetWorkloadAccessToken",
+      "Effect": "Allow",
+      "Action": "bedrock-agentcore:GetWorkloadAccessToken",
+      "Resource": [
+        "arn:aws:bedrock-agentcore:us-east-1:102959685868:workload-identity-directory/default",
+        "arn:aws:bedrock-agentcore:us-east-1:102959685868:workload-identity-directory/default/workload-identity/wanderbot-gateway-*"
+      ]
+    },
+    {
+      "Sid": "GetLoyaltyApiKey",
+      "Effect": "Allow",
+      "Action": "bedrock-agentcore:GetResourceApiKey",
+      "Resource": "arn:aws:bedrock-agentcore:us-east-1:102959685868:token-vault/default/apikeycredentialprovider/wanderbot-loyalty-api-key"
+    },
+    {
+      "Sid": "GetLoyaltyApiKeySecret",
+      "Effect": "Allow",
+      "Action": "secretsmanager:GetSecretValue",
+      "Resource": "arn:aws:secretsmanager:us-east-1:102959685868:secret:bedrock-agentcore-identity!default/apikey/wanderbot-loyalty-api-key-d5e36dc1-kO5QDB"
+    }
+  ]
+}

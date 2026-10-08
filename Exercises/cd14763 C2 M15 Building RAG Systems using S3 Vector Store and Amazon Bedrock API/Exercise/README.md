@@ -41,8 +41,8 @@ The first two steps are **infrastructure** (console + CLI). The last two are **c
 
 ### Step 1 (infra) — Upload Documents to S3
 ```bash
-aws s3 cp datasets/travel_policies.txt     s3://your-bucket/wanderbot-kb/
-aws s3 cp datasets/destination_guides.txt  s3://your-bucket/wanderbot-kb/
+aws s3 cp datasets/travel_policies.txt     s3://wanderbucket-east//wanderbot-kb/
+aws s3 cp datasets/destination_guides.txt  s3://wanderbucket-east//wanderbot-kb/
 ```
 
 ### Step 2 (infra) — Create the Knowledge Base

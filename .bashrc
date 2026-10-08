@@ -116,3 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 alias vocinstall="/usr/local/vocareum/scripts/vocinstall.sh"
+
+agentcore() { python3 -c "from bedrock_agentcore_starter_toolkit.cli.cli import main; main()" "$@"; }
+
+. "$HOME/.local/bin/env"
+
+agentcore() { python3 -c "from bedrock_agentcore_starter_toolkit.cli.cli import main; main()" "$@"; }

@@ -22,7 +22,7 @@ from strands.models import BedrockModel
 import nest_asyncio
 import playwright
 # TODO Step 1: Import AgentCoreBrowser from strands_tools.browser
-
+from strands_tools.browser import AgentCoreBrowser
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("WanderBot.AgentCoreBrowser")
@@ -52,7 +52,13 @@ async def invoke(payload: dict, context=None) -> dict:
 
     # TODO Step 2: Instantiate AgentCoreBrowser (session_timeout=600 is fine)
     #              and create an agent with browser.browser to the agent's tools list
-
+    
+    browser=AgentCoreBrowser(session_timeout=600)
+    agent=Agent(
+        model=model,
+        system_prompt=SYSTEM_PROMPT,
+        tools=[browser.browser]
+    )
     response = agent(user_message)
     return response
 

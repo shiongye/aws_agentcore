@@ -115,7 +115,7 @@ Output::
             "environment": {
                 "type": "LINUX_CONTAINER",
                 "environmentVariables": [],
-                "computeType": "BUILD_GENERAL1_MEDIUM",
+                "computeType": "",
                 "privilegedMode": false,
                 "image": "aws/codebuild/standard:1.0",
                 "imagePullCredentialsType": "CODEBUILD"

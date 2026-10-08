@@ -35,39 +35,39 @@ model = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
 # ===========================================================================
 # TODO Step 1: Implement search_flights
-#
-# @tool
-# def search_flights(origin: str, destination: str) -> str:
-#     """Search available flights between two cities."""
-#     flights = json.loads((DATA_DIR / "flights.json").read_text())
-#     matches = [
-#         f for f in flights
-#         if f.get("origin", "").upper() == origin.upper()
-#         and f.get("destination", "").upper() == destination.upper()
-#         and f.get("status") != "CANCELLED"
-#     ]
-#     if not matches:
-#         return f"No flights found from {origin} to {destination}."
-#     return json.dumps(matches[:5], indent=2)
+
+@tool
+def search_flights(origin: str, destination: str) -> str:
+    """Search available flights between two cities."""
+    flights = json.loads((DATA_DIR / "flights.json").read_text())
+    matches = [
+        f for f in flights
+        if f.get("origin", "").upper() == origin.upper()
+        and f.get("destination", "").upper() == destination.upper()
+        and f.get("status") != "CANCELLED"
+    ]
+    if not matches:
+        return f"No flights found from {origin} to {destination}."
+    return json.dumps(matches[:5], indent=2)
 # ===========================================================================
 
 
 # ===========================================================================
 # TODO Step 2: Implement search_hotels
-#
-# @tool
-# def search_hotels(city: str, max_price: float = 500.0) -> str:
-#     """Search available hotels in a city with an optional maximum price."""
-#     hotels = json.loads((DATA_DIR / "hotels.json").read_text())
-#     matches = [
-#         h for h in hotels
-#         if h.get("location", "").lower() == city.lower()
-#         and h.get("available", True)
-#         and h.get("price_per_night_usd", 0) <= max_price
-#     ]
-#     if not matches:
-#         return f"No hotels found in {city} under ${max_price}/night."
-#     return json.dumps(matches[:5], indent=2)
+
+@tool
+def search_hotels(city: str, max_price: float = 500.0) -> str:
+    """Search available hotels in a city with an optional maximum price."""
+    hotels = json.loads((DATA_DIR / "hotels.json").read_text())
+    matches = [
+        h for h in hotels
+        if h.get("location", "").lower() == city.lower()
+        and h.get("available", True)
+        and h.get("price_per_night_usd", 0) <= max_price
+    ]
+    if not matches:
+        return f"No hotels found in {city} under ${max_price}/night."
+    return json.dumps(matches[:5], indent=2)
 # ===========================================================================
 
 
@@ -84,14 +84,14 @@ async def invoke(payload: dict, context=None) -> dict:
     logger.info("User: %s", user_message[:80])
 
     # TODO Step 3: Build the Agent with both tools and invoke it
-    #
-    # agent = Agent(
-    #     model=model,
-    #     system_prompt=SYSTEM_PROMPT,
-    #     tools=[search_flights, search_hotels],
-    # )
-    # response = agent(user_message)
-    # return response
+    
+    agent = Agent(
+        model=model,
+        system_prompt=SYSTEM_PROMPT,
+        tools=[search_flights, search_hotels],
+    )
+    response = agent(user_message)
+    return response
     pass
 
 

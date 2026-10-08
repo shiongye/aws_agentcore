@@ -19,7 +19,7 @@ app = BedrockAgentCoreApp()
 model = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 
 # TODO: Set this to your Gateway endpoint here
-GATEWAY_ENDPOINT = "Gateway URL goes here"
+GATEWAY_ENDPOINT = "https://wanderbot-gateway-rhqopos9qz.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
 
 SYSTEM_PROMPT = """You are WanderBot, the AI travel assistant for Horizon Travel.
 

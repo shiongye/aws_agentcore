@@ -30,7 +30,7 @@ Output::
                 "timeoutInMinutes": 60,
                 "environment": {
                     "privilegedMode": false,
-                    "computeType": "BUILD_GENERAL1_MEDIUM",
+                    "computeType": "BUILD_GENERAL1_SMALL ",
                     "image": "aws/codebuild/windows-base:1.0",
                     "environmentVariables": [],
                     "type": "WINDOWS_CONTAINER"
@@ -206,7 +206,7 @@ Output::
                 "timeoutInMinutes": 60,
                 "environment": {
                     "privilegedMode": false,
-                    "computeType": "BUILD_GENERAL1_MEDIUM",
+                    "computeType": "BUILD_GENERAL1_SMALL",
                     "image": "aws/codebuild/windows-base:1.0",
                     "environmentVariables": [],
                     "type": "WINDOWS_CONTAINER"

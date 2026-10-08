@@ -26,7 +26,7 @@ Output::
             "currentPhase": "QUEUED",
             "startTime": 1556905683.568,
             "environment": {
-                "computeType": "BUILD_GENERAL1_MEDIUM",
+                "computeType": "BUILD_GENERAL1_SMALL",
                 "environmentVariables": [],
                 "type": "LINUX_CONTAINER",
                 "privilegedMode": false,

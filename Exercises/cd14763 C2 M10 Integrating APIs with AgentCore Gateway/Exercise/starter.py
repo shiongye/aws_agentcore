@@ -24,6 +24,8 @@ from strands.models import BedrockModel
 # TODO (Step 1): Add the following imports:
 #   Import streamable_http_client from mcp.client.streamable_http
 #   Import MCPClient from strands.tools.mcp.mcp_client
+from mcp.client.streamable_http import streamable_http_client
+from strands.tools.mcp.mcp_client import MCPClient
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -43,7 +45,7 @@ model = BedrockModel(model_id="us.amazon.nova-2-lite-v1:0")
 # ---------------------------------------------------------------------------
 # Gateway endpoint — set via environment variable
 # ---------------------------------------------------------------------------
-GATEWAY_ENDPOINT = "https://PLACEHOLDER/mcp" # TODO: Set this before running:
+GATEWAY_ENDPOINT = "https://wanderbot-gateway-rhqopos9qz.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp" # TODO: Set this before running:
 
 # ---------------------------------------------------------------------------
 # System prompt
@@ -53,6 +55,8 @@ SYSTEM_PROMPT = """You are WanderBot, the AI travel assistant for Horizon Travel
 You have access to tools via the AgentCore Gateway:
 - get_booking(booking_ref)          : Retrieve a booking by reference (e.g. BK-1001)
 - list_bookings_by_email(email)     : List all bookings for a customer email
+- search_hotels(city)               : List all hotels in a city within budget
+- get_hotel_detail(hotel_id)        : List hotel details by hotel id (e.g. HTL-009)
 
 Use these tools to help customers with their bookings.
 Present results clearly and ask clarifying questions when needed."""
@@ -76,11 +80,25 @@ async def invoke(payload: dict, context=None) -> dict:
 
     
     # TODO Step 2: Connection to the Gateway using MCPClient:
-   
+    client=MCPClient(
+        lambda: streamable_http_client(url=GATEWAY_ENDPOINT)
+    )
 
     # TODO Step 3: Discover all tools registered in the Gateway:
-    
+    with client:
+        tools = client.list_tools_sync()
+        logger.info('tools name', [t.tool_name for t in tools])
+        logger.info('discovered ', [t.tool_name for t in tools], 'from lambda gateway')
+
         # TODO Step 4: Create the Agent with discovered tools and invoke it:
+        agent=Agent(
+            model=model,
+            system_prompt=SYSTEM_PROMPT,
+            tools=tools,
+        )
+        response=agent(user_message)
+
+    return response
     
 
 # ---------------------------------------------------------------------------
